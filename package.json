@@ -1,0 +1,29 @@
+{
+  "name": "restore-overrides",
+  "description": "",
+  "version": "0.1.0",
+  "engines": {
+    "sketch": ">=49.0"
+  },
+  "skpm": {
+    "name": "restore-overrides",
+    "manifest": "src/manifest.json",
+    "main": "restore-overrides.sketchplugin",
+    "assets": [
+      "assets/**/*"
+    ],
+    "sketch-assets-file": "sketch-assets/icons.sketch"
+  },
+  "scripts": {
+    "build": "skpm-build",
+    "watch": "skpm-build --watch",
+    "start": "skpm-build --watch --run",
+    "postinstall": "npm run build && skpm-link"
+  },
+  "devDependencies": {
+    "@skpm/builder": "^0.7.0",
+    "@skpm/fs": "^0.2.4"
+  },
+  "author": "Daniel T. Hall <danielthall@me.com>",
+  "repository": "https://github.com/danielthall/restore-overrides"
+}

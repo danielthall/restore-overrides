@@ -1,0 +1,21 @@
+{
+  "icon": "icon.png",
+  "commands": [
+    {
+      "name": "Override Export",
+      "identifier": "restore-overrides.override-export-identifier",
+      "script": "./override-export.js"
+      }, {
+      "name": "Override Import",
+      "identifier": "restore-overrides.override-import-identifier",
+      "script": "./override-import.js"
+    }
+  ],
+  "menu": {
+    "title": "Restore Overrides",
+    "items": [
+      "restore-overrides.override-export-identifier",
+      "restore-overrides.override-import-identifier"
+    ]
+  }
+}

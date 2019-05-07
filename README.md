@@ -1,92 +1,20 @@
-# restore-overrides
+# Restore Overrides
 
-## Installation
+This plugin is a workaround for Library updates that reset override values on symbol instances. This happens when a symbol containing a string value is replaced with a different symbol, and the override can no longer map to the new symbol.
 
-- [Download](../../releases/latest/download/restore-overrides.sketchplugin.zip) the latest release of the plugin
-- Un-zip
-- Double-click on restore-overrides.sketchplugin
+## Usage
 
-## Development Guide
+This plugin must be run sequentially in the following order:
+1. Open the document and **do not update the library**
+2. Run the `Override Export` command. This will create a JSON document at `${homeDirectory}/sketch-restore-overrides/${documentName}` containing the values of every override from every symbol instance from every artboard on every page in your document. Very large files (hundreds of artboards) may take up to 30 seconds.
+3. Accept the library updates.
+4. Run the `Override Import` command. This will find the generated JSON file and try to reset the values on the newly updated symbols.
 
-_This plugin was created using `skpm`. For a detailed explanation on how things work, checkout the [skpm Readme](https://github.com/skpm/skpm/blob/master/README.md)._
+## Things to look out for
 
-### Usage
+This plugin has a few gotchas, most notably, it only works on text values. All other override types are not supported at this time. Additionally, Sketch doesn't appear to provide unique UUIDs for each override of the same type, so if you have a group of the same symbol- for example, list items- The override values all get the same ID. The current work around for this is to remove each item from the list as it is set. Because of this, the order of your symbol instances **must not change** from the time you export to the time you import.
 
-Install the dependencies
-
-```bash
-npm install
-```
-
-Once the installation is done, you can run some commands inside the project folder:
-
-```bash
-npm run build
-```
-
-To watch for changes:
-
-```bash
-npm run watch
-```
-
-Additionally, if you wish to run the plugin every time it is built:
-
-```bash
-npm run start
-```
-
-### Custom Configuration
-
-#### Babel
-
-To customize Babel, you have two options:
-
-- You may create a [`.babelrc`](https://babeljs.io/docs/usage/babelrc) file in your project's root directory. Any settings you define here will overwrite matching config-keys within skpm preset. For example, if you pass a "presets" object, it will replace & reset all Babel presets that skpm defaults to.
-
-- If you'd like to modify or add to the existing Babel config, you must use a `webpack.skpm.config.js` file. Visit the [Webpack](#webpack) section for more info.
-
-#### Webpack
-
-To customize webpack create `webpack.skpm.config.js` file which exports function that will change webpack's config.
-
-```js
-/**
- * Function that mutates original webpack config.
- * Supports asynchronous changes when promise is returned.
- *
- * @param {object} config - original webpack config.
- * @param {boolean} isPluginCommand - whether the config is for a plugin command or a resource
- **/
-module.exports = function(config, isPluginCommand) {
-  /** you can change config here **/
-}
-```
-
-### Debugging
-
-To view the output of your `console.log`, you have a few different options:
-
-- Use the [`sketch-dev-tools`](https://github.com/skpm/sketch-dev-tools)
-- Run `skpm log` in your Terminal, with the optional `-f` argument (`skpm log -f`) which causes `skpm log` to not stop when the end of logs is reached, but rather to wait for additional data to be appended to the input
-
-### Publishing your plugin
-
-```bash
-skpm publish <bump>
-```
-
-(where `bump` can be `patch`, `minor` or `major`)
-
-`skpm publish` will create a new release on your GitHub repository and create an appcast file in order for Sketch users to be notified of the update.
-
-You will need to specify a `repository` in the `package.json`:
-
-```diff
-...
-+ "repository" : {
-+   "type": "git",
-+   "url": "git+https://github.com/ORG/NAME.git"
-+  }
-...
-```
+## Roadmap
+- [ ] Add tests
+- [ ] Add ability to install from Sketch Runner and Sketch Packs
+- [ ] Add support for other override types

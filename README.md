@@ -2,6 +2,13 @@
 
 This plugin is a workaround for Library updates that reset override values on symbol instances. This happens when a symbol containing a string value is replaced with a different symbol, and the override can no longer map to the new symbol.
 
+[![Compatible Sketch Version](https://badges.sketchpacks.com/plugins/IDENTIFIER/compatibility.svg)](https://sketchpacks.com/danielthall/restore-overrides)
+
+[![Download from Sketchpacks.com](https://badges.sketchpacks.com/plugins/IDENTIFIER/version.svg)](https://api.sketchpacks.com/v1/plugins/restore-overrides/download)
+
+## Installation
+
+
 ## Usage
 
 This plugin must be run sequentially in the following order:

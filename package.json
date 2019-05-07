@@ -7,12 +7,16 @@
   },
   "skpm": {
     "name": "restore-overrides",
+    "title": "Restore Overrides",
     "manifest": "src/manifest.json",
     "main": "restore-overrides.sketchplugin",
     "assets": [
       "assets/**/*"
     ],
-    "sketch-assets-file": "sketch-assets/icons.sketch"
+    "sketch-assets-file": "sketch-assets/icons.sketch",
+    "identifier": "restore-overrides",
+    "appcast": "https://api.sketchpacks.com/v1/plugins/restore-overrides/appcast"
+
   },
   "scripts": {
     "build": "skpm-build",

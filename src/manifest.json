@@ -1,5 +1,6 @@
 {
   "icon": "icon.png",
+  "identifier": "restore-overrides",
   "commands": [
     {
       "name": "Override Export",

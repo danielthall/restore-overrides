@@ -1,5 +1,5 @@
 {
-  "name": "restore-overrides",
+  "name": "Restore Overrides",
   "description": "A small plugin to store and restore override values before and after library updates",
   "version": "0.3.0",
   "engines": {

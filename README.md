@@ -2,11 +2,26 @@
 
 This plugin is a workaround for Library updates that reset override values on symbol instances. This happens when a symbol containing a string value is replaced with a different symbol, and the override can no longer map to the new symbol.
 
-[![Compatible Sketch Version](https://badges.sketchpacks.com/plugins/IDENTIFIER/compatibility.svg)](https://sketchpacks.com/danielthall/restore-overrides)
+[![Download from Sketchpacks.com](https://badges.sketchpacks.com/plugins/restore-overrides/version.svg)](https://api.sketchpacks.com/v1/plugins/restore-overrides/download)
 
-[![Download from Sketchpacks.com](https://badges.sketchpacks.com/plugins/IDENTIFIER/version.svg)](https://api.sketchpacks.com/v1/plugins/restore-overrides/download)
 
-## Installation
+## Installing Plugins
+
+### Install from download
+1. [Download the ZIP file](https://github.com/danielthall/restore-overrides/archive/master.zip) and unzip
+2. Open `restore-overrides.sketchplugin`
+
+### Install with Sketchpacks
+1. With [Sketchpacks](https://sketchpacks.com), search for `Restore Overrides`
+2. Click `Install`
+3. Get automatic updates for `Restore OVerrides`
+
+**Already have Sketchpacks?**
+
+[![Install Restore Overrides with Sketchpacks](http://sketchpacks-com.s3.amazonaws.com/assets/badges/sketchpacks-badge-install.png "Install Restore Overrides with Sketchpacks")](https://sketchpacks.com/danielthall/restore-overrides/install)
+
+### Install with Sketch Runner
+With Sketch Runner, just go to the `install` command and search for `Restore Overrides`. Runner allows you to manage plugins and do much more to speed up your workflow in Sketch. [Download Runner here](http://www.sketchrunner.com).
 
 
 ## Usage

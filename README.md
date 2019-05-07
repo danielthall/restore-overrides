@@ -38,5 +38,5 @@ This plugin has a few gotchas, most notably, it only works on text values. All o
 
 ## Roadmap
 - [ ] Add tests
-- [ ] Add ability to install from Sketch Runner and Sketch Packs
+- [x] Add ability to install from Sketch Runner and Sketch Packs
 - [ ] Add support for other override types
